@@ -18,8 +18,7 @@ module.exports = function (grunt) {
     // Strip the leading path segment off, e.g. `app/bower_components` ->
     // `bower_components`
     var bowerDirBits = bowerConfig.directory.split(path.sep);
-    bowerDirBits.shift();
-    var componentsPath = bowerDirBits.join(path.sep);
+    var componentsPath = bowerDirBits.pop();
 
     grunt.log
       .writeln('Going through ' + grunt.log.wordlist(files) + ' to update script refs');
